@@ -50,8 +50,8 @@ function initApp() {
 	
 	document.getElementById("JsonString").onclick = function() {
 		var returnVal = "String not found.";
-		if ( IsJsonString(document.getElementById("myInput").value) ) {
-			var myJsonVal = JSON.parse( document.getElementById("myInput").value );
+		if ( IsJsonString( window.localStorage.getItem("myStoredVal") ) ) {
+			var myJsonVal = JSON.parse( window.localStorage.getItem("myStoredVal" ) );
 			if (myJsonVal.hasOwnProperty('string')) {
 				var returnVal = myJsonVal.string;
 			}
@@ -61,8 +61,8 @@ function initApp() {
 	
 	document.getElementById("JsonObjA").onclick = function() {
 		var returnVal = "Object A not found.";
-		if ( IsJsonString(document.getElementById("myInput").value) ) {
-			var myJsonVal = JSON.parse( document.getElementById("myInput").value );
+		if ( IsJsonString( window.localStorage.getItem("myStoredVal") ) ) {
+			var myJsonVal = JSON.parse( window.localStorage.getItem("myStoredVal" ) );
 			if ( myJsonVal.hasOwnProperty('object') && myJsonVal.object.hasOwnProperty('a') ) {
 				var returnVal = myJsonVal.object.a;
 			}
